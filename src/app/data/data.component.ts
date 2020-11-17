@@ -47,7 +47,7 @@ export class DataComponent implements OnInit {
   };
 
   importWeatherData() {
-    this.http.get<weather[]>('http://localhost:8099/getAllRecords', this.httpOptions)
+    this.http.get<weather[]>('https://weather-backend-api-2.herokuapp.com/getAllRecords', this.httpOptions)
       .subscribe(weatherJsonArray => {
         this.dailyContainer = new MatTableDataSource(weatherJsonArray.map(weatherJson => {
           return {
